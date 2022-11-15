@@ -1,12 +1,38 @@
-// Common string methods
+// Numbers data type
+let radius = 10;
+const pi = 3.14;
 
-let email = "soran.taak@gmail.com";
+console.log(radius, pi);
 
-// let result = email.lastIndexOf("a");
-// let result = email.slice(2, 5);
-// let result = email.substring(2, email.length - 5);
-// let result = email.substring(2, 10);
+//math operators  + , - , * , / , ** , %
 
-// let result = email.replace("a", "v");
+// console.log(10 / 2);
 
+// let result = radius % 3;
+// let result = pi * radius ** 2;
+
+//order of operarion - B I D M A S
+// let result = 5 * (10 - 3) ** 2;
+
+// console.log(result);
+
+let likes = 10;
+
+// likes = likes + 1;
+// likes++;
+// likes--;
+
+// likes += 10;
+// likes -= 5;
+// likes *= 2;
+// likes /= 2;
+// likes %= 2;
+
+// console.log(likes);
+
+//NaN - not a number
+// console.log(55 / "hello");
+// console.log(5 * "hello");
+
+let result = "th blog has " + likes + " likes";
 console.log(result);
