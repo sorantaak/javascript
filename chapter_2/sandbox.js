@@ -1,18 +1,25 @@
-let age = 25;
-let year = 2019;
+// Strings
+console.log("hello , world");
+let email = "soran.taak@gmail.com";
+console.log(email);
 
-//log things to console
-console.log(age, year);
+// String concatenation
+let firstName = "Soran";
+let lastName = "Taak";
+let fullName = firstName + " " + lastName;
+console.log(fullName);
 
-/* multi line 
+// geeting characters
+console.log(fullName[0]);
+console.log(fullName[2]);
 
-comments */
-age = 30;
+// string length
+console.log(fullName.length);
 
-console.log(age);
+// string methods
+console.log(fullName.toUpperCase());
+let result = fullName.toLocaleLowerCase();
+console.log(result, fullName);
 
-const points = 100;
-console.log(points);
-
-var score = 75;
-console.log(score);
+let index = email.indexOf("@");
+console.log(index);
