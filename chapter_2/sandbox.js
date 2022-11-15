@@ -1,21 +1,29 @@
-// template strings
-const title = "Best reads of 2019";
-const author = "Mario";
-const likes = 30;
+// Array
+let figther = ["soran", "sirwan", "sahar"];
+// console.log(...figther);
+// console.log(figther);
+// figther[1] = "mahsa";
+// console.log(figther[1]);
+// console.log(figther);
 
-// concatenations way
-// let result =
-// 	"The blog called " + title + " bye " + author + " has " + likes + " likes";
-// console.log(result);
+// let ages = [20, 25, 35];
+// console.log(ages[2]);
 
-// template string way
-let result = `The blog called ${title} by ${author} has ${likes} likes`;
+// let random = ["shaun", "crystal", 30, 20];
+// console.log(random);
+
+// console.log(figther.length);
+
+// array methods
+
+// let result = figther.join(",");
+// let result = figther.indexOf("sirwan");
+// let result = figther.concat(ages);
+// let result = figther.push("saed");
+//  result = figther.push("shady");
+
+let result = figther.push("amir");
+result = figther.pop();
 console.log(result);
 
-// creating html templates
-let html = `
-    <h2>${title}</h2>
-    <p>${author}</p>
-    <span>This Blog has ${likes} likes </span>
-`;
-console.log(html);
+console.log(figther);
