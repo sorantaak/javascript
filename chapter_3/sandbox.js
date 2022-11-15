@@ -1,14 +1,12 @@
-// for loops
-for (let i = 0; i < 5; i++) {
-	console.log("in loop: ", i);
-}
-
-console.log("loop finished");
-
+// while loops
 const fNames = ["soran", "sahar", "sirwan", "mahsa"];
-
-for (let i = 0; i < fNames.length; i++) {
-	// console.log(i, fNames[i]);
-	let html = `<div>${fNames[i]}</div>`;
-	console.log(html);
+// let i = 0;
+// while (i < 5) {
+// 	console.log("in loop: ", i);
+// 	i++;
+// }
+let i = 0;
+while (i < fNames.length) {
+	console.log(i, fNames[i]);
+	i++;
 }
