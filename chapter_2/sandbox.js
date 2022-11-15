@@ -1,25 +1,12 @@
-// Strings
-console.log("hello , world");
+// Common string methods
+
 let email = "soran.taak@gmail.com";
-console.log(email);
 
-// String concatenation
-let firstName = "Soran";
-let lastName = "Taak";
-let fullName = firstName + " " + lastName;
-console.log(fullName);
+// let result = email.lastIndexOf("a");
+// let result = email.slice(2, 5);
+// let result = email.substring(2, email.length - 5);
+// let result = email.substring(2, 10);
 
-// geeting characters
-console.log(fullName[0]);
-console.log(fullName[2]);
+// let result = email.replace("a", "v");
 
-// string length
-console.log(fullName.length);
-
-// string methods
-console.log(fullName.toUpperCase());
-let result = fullName.toLocaleLowerCase();
-console.log(result, fullName);
-
-let index = email.indexOf("@");
-console.log(index);
+console.log(result);
