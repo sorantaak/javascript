@@ -1,29 +1,6 @@
-// Array
-let figther = ["soran", "sirwan", "sahar"];
-// console.log(...figther);
-// console.log(figther);
-// figther[1] = "mahsa";
-// console.log(figther[1]);
-// console.log(figther);
+// Null & Undefined
+let age;
+console.log(age, age + 3, `the age is ${age}`);
 
-// let ages = [20, 25, 35];
-// console.log(ages[2]);
-
-// let random = ["shaun", "crystal", 30, 20];
-// console.log(random);
-
-// console.log(figther.length);
-
-// array methods
-
-// let result = figther.join(",");
-// let result = figther.indexOf("sirwan");
-// let result = figther.concat(ages);
-// let result = figther.push("saed");
-//  result = figther.push("shady");
-
-let result = figther.push("amir");
-result = figther.pop();
-console.log(result);
-
-console.log(figther);
+let fName = null;
+console.log(fName, fName + 3, `the name is ${fName}`);
