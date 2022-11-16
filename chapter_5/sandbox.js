@@ -5,22 +5,24 @@ let user = {
 	email: "soran.taak@gmail.com",
 	location: "Mahabad",
 	blogs: ["why mac & chees rules", "10 things make with marmite"],
-	login: function () {
+	login() {
 		console.log("the user loged in!");
 	},
-	logout: function () {
+	logout() {
 		console.log("the user loged out");
 	},
 	logBlogs: function () {
-		// this.blogs.forEach((blog) => {
-		// 	console.log(blog);
-		// });
+		console.log("this user has written the following blogs:");
+		this.blogs.forEach((blog) => {
+			console.log(blog);
+		});
+	},
+	logBlogs2: () => {
+		console.log(this); // this key word in arrow functin that related to object refers the window object
 	},
 };
-
 user.login();
-user.logout();
-// user.logBlogs();
+user.logBlogs();
 
-const fname = "soran";
-fname.toUpperCase();
+user.logBlogs2();
+console.log(this);
