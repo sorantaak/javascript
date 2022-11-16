@@ -10,8 +10,11 @@
 // if (fighters.length > 4) {
 // 	console.log("that's a lot of fighters");
 // }
-const password = "password";
-
-if (password.length >= 8) {
+const password = "p@ss";
+if (password.length >= 12) {
+	console.log("that password is mighty strong");
+} else if (password.length >= 8) {
 	console.log("that password is log enough!");
+} else {
+	console.log("password is not long enogh!");
 }
