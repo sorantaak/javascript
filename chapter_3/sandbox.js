@@ -1,15 +1,23 @@
-// break and continue
+// switch statements
+const grade = "50";
 
-const score = [50, 25, 0, 30, 100, 20, 10];
-
-for (let i = 0; i < score.length; i++) {
-	if(score[i]===0){
-		console.log('your score is zero');
-		continue;
-	}
-	console.log("your score: ", score[i]);
-	if (score[i] === 100) {
-		console.log("congrats, tou got the top score!");
+switch (grade) {
+	case "A":
+		console.log("you got an A!");
 		break;
-	}
+	case "B":
+		console.log("you got an B!");
+		break;
+	case "C":
+		console.log("you got an C!");
+		break;
+	case "D":
+		console.log("you got an D!");
+		break;
+	case "E":
+		console.log("you got an E!");
+		break;
+	default:
+		console.log("not a valid grade");
+		break;
 }
