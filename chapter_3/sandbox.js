@@ -1,20 +1,12 @@
-// if statements
-// const age = 25;
-
-// if (age > 20) {
-// 	console.log("you are ower 20 years old");
-// }
-
-// const fighters = ["soran", "sahar", "sirwan", "mahsa"];
-
-// if (fighters.length > 4) {
-// 	console.log("that's a lot of fighters");
-// }
-const password = "p@ss";
-if (password.length >= 12) {
+// Logic operators - OR || and nd &&
+const password = "p@ss12";
+if (password.length >= 12 && password.includes("@")) {
 	console.log("that password is mighty strong");
-} else if (password.length >= 8) {
-	console.log("that password is log enough!");
+} else if (
+	password.length >= 8 ||
+	(password.includes("@") && password.length > 5)
+) {
+	console.log("that password is strong enough!");
 } else {
-	console.log("password is not long enogh!");
+	console.log("password is not strong enogh!");
 }
