@@ -1,14 +1,27 @@
-// returning values
+// practice arrow functions function
+// const greet = function(){
+//     return 'hello, world';
+// }
 
-// const speak = function (name = "soran", time = "night") {
-// 	console.log(`good ${time} ${name}`);
-// };
-const calcArea = function (radius) {
-	// let area
-	return 3.14 * radius ** 2;
-	// return area;
+const greet = () => "hello, wrold";
+const result = greet();
+console.log(result);
+
+const bill = function (products, tax) {
+	let total = 0;
+	for (let i = 0; i < products.length; i++) {
+		total += products[i] + products[i] * tax;
+	}
+	return total;
+};
+// bill and bill2 same function
+const bill2 = (products, tax) => {
+	let total = 0;
+	for (let i = 0; i < products.length; i++) {
+		total += products[i] + products[i] * tax;
+	}
+	return total;
 };
 
-const area = calcArea(5);
-console.log(area);
- 
+console.log(bill([10, 15, 30], 0.2));
+console.log(bill2([10, 15, 30], 0.2));
