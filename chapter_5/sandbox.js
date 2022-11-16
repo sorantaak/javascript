@@ -5,19 +5,22 @@ let user = {
 	email: "soran.taak@gmail.com",
 	location: "Mahabad",
 	blogs: ["why mac & chees rules", "10 things make with marmite"],
+	login: function () {
+		console.log("the user loged in!");
+	},
+	logout: function () {
+		console.log("the user loged out");
+	},
+	logBlogs: function () {
+		// this.blogs.forEach((blog) => {
+		// 	console.log(blog);
+		// });
+	},
 };
 
-console.log(user);
-console.log(user.name);
+user.login();
+user.logout();
+// user.logBlogs();
 
-user.age = 35;
-console.log(user.age);
-
-let key = "location";
-console.log(user[key]); // user[key] equl user['location']
-
-user["name"] = "Sahar";
-console.log(user["name"]);
-
-
-console.log(typeof user);
+const fname = "soran";
+fname.toUpperCase();
