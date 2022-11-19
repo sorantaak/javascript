@@ -1,11 +1,15 @@
-// const para = document.querySelector("body > h1"); // selec first p tag in the dom
-// console.log(para);
+// get an element by ID
+const title = document.getElementById("page-title");
+console.log(title);
 
-const paras = document.querySelectorAll("p");
-console.log(paras); // this node list very like an array but it is not array we can not use all teh array methods
-console.log(paras[2]);
-const errors = document.querySelectorAll('.error')
+// get elements by theri class name
+const errors = document.getElementsByClassName("error"); // this statement return HtmlCoolection.
 console.log(errors);
-paras.forEach((para) => {
-	console.log(para);
-});
+console.log(errors[0]);
+//we can not use forEah in HtmlCollecttion
+// errors.forEach((error) => console.log(error));
+
+// get elemets by their tag name
+const paras2 = document.getElementsByTagName('p')
+console.log(paras2);
+console.log(paras2[2]);
