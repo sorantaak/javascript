@@ -1,14 +1,11 @@
-const link = document.querySelector("a");
+const title = document.querySelector("h1");
 
-console.log(link.getAttribute("href"));
+// title.setAttribute("style", "margin:50px");
 
-link.setAttribute("href", "https://www.yahoo.com");
-console.log(link.getAttribute("href"));
-link.innerText = "the yahoo website";
+// console.log(title.style);
 
-const messg = document.querySelector("p");
-
-console.log(messg.getAttribute("class"));
-messg.setAttribute("class", "success");
-console.log(messg.getAttribute("class"));
-messg.setAttribute("style", "color:blue");
+console.log(title.style.color);
+title.style.margin = "50px";
+title.style.color = "crimson";
+title.style.fontSize='60px'
+title.style.margin='';
