@@ -1,15 +1,21 @@
-// get an element by ID
-const title = document.getElementById("page-title");
-console.log(title);
+const para = document.querySelector("p"); // select first paragraph on the page
 
-// get elements by theri class name
-const errors = document.getElementsByClassName("error"); // this statement return HtmlCoolection.
-console.log(errors);
-console.log(errors[0]);
-//we can not use forEah in HtmlCollecttion
-// errors.forEach((error) => console.log(error));
+// console.log(para.innerText);
+// para.innerText = "sorn is a assowm!";
 
-// get elemets by their tag name
-const paras2 = document.getElementsByTagName('p')
-console.log(paras2);
-console.log(paras2[2]);
+const paras = document.querySelectorAll("p");
+paras.forEach((para) => {
+	console.log(para.innerText);
+	para.innerText += " New Text";
+});
+
+const content = document.querySelector(".content");
+
+// console.log(content.innerHTML);
+// content.innerHTML +=`<h2>This is an new H2</h2>`;
+
+const people = ["mario", "luigi", "yoshi"];
+
+people.forEach((person) => {
+	content.innerHTML += `<p>${person}</p>`;
+});
