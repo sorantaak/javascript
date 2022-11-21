@@ -1,21 +1,14 @@
-const para = document.querySelector("p"); // select first paragraph on the page
+const link = document.querySelector("a");
 
-// console.log(para.innerText);
-// para.innerText = "sorn is a assowm!";
+console.log(link.getAttribute("href"));
 
-const paras = document.querySelectorAll("p");
-paras.forEach((para) => {
-	console.log(para.innerText);
-	para.innerText += " New Text";
-});
+link.setAttribute("href", "https://www.yahoo.com");
+console.log(link.getAttribute("href"));
+link.innerText = "the yahoo website";
 
-const content = document.querySelector(".content");
+const messg = document.querySelector("p");
 
-// console.log(content.innerHTML);
-// content.innerHTML +=`<h2>This is an new H2</h2>`;
-
-const people = ["mario", "luigi", "yoshi"];
-
-people.forEach((person) => {
-	content.innerHTML += `<p>${person}</p>`;
-});
+console.log(messg.getAttribute("class"));
+messg.setAttribute("class", "success");
+console.log(messg.getAttribute("class"));
+messg.setAttribute("style", "color:blue");
