@@ -1,19 +1,19 @@
-// const content = document.querySelector("p");
-// console.log(content.classList);
-// content.classList.add("error");
-// content.classList.remove("error");
-// content.classList.add("success");
+const article = document.querySelector("article");
 
-const paras = document.querySelectorAll("p");
+// console.log(article.children);
+// console.log(Array.from(article.children));
+// console.log(article.children);
 
-paras.forEach((para) => {
-	if (para.textContent.includes("success")) {
-		para.classList.add("success");
-	} else if (para.textContent.includes("error")) {
-		para.classList.add("error");
-	}
-});
+// Array.from(article.children).forEach((child) => {
+// 	child.classList.add("article-element");
+// });
 
-const title = document.querySelector(".title");
-console.log(title.classList.toggle("test")); //if this class is exist then remove it else add it
-// console.log( title.classList.toggle("test"));
+const title = document.querySelector("h2");
+// console.log(title.parentElement);
+// console.log(title.parentElement.parentElement);
+// console.log(title.parentElement.parentElement.parentElement);
+// console.log(title.nextElementSibling);
+console.log(title.previousElementSibling);
+
+//chaning
+console.log(title.nextElementSibling.parentElement.children);
