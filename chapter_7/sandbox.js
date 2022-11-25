@@ -1,21 +1,18 @@
 const form = document.querySelector(".signup-form");
-// const username = document.querySelector("#username");
-
+const feedback = document.querySelector(".feedback");
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-	// console.log(username.value);
-	console.log(form.username.value);
+
+	//validation
+	const username = form.username.value;
+	const usernamePattern = /^[a-zA-z]{6,12}$/;
+
+	if (usernamePattern.test(username)) {
+		// feedback good info
+		feedback.textContent = "that username is valid!";
+	} else {
+		// feedback help info
+		feedback.textContent =
+			"username must contain letters only & between 6 & 12 characters long";
+	}
 });
-
-const username = "343434soradf";
-const pattern = /^[a-z]{6,}$/;
-
-// let result = pattern.test(username)
-// if(result){
-//     console.log('regex test passed :)');
-// }else{
-//       console.log("regex test faild :( ");
-// }
-
-let result = username.search(pattern); //return integer if pattern is not match, search function return -1 else return positon letter
-console.log(result);
