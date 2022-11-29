@@ -19,8 +19,15 @@ form.addEventListener("submit", (e) => {
 
 		//show result on page
 		scrollTo(0, 0);
-		result.querySelector("span").textContent = `${score}%`;
+		let output = 0;
 		result.classList.remove("d-none");
-		console.log(score);
+		const timer = setInterval(() => {
+			result.querySelector("span").textContent = `${output}%`;
+			if (score === output) {
+				clearInterval(timer);
+			} else {
+				output++;
+			}
+		}, 50);
 	});
 });
