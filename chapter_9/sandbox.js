@@ -1,23 +1,30 @@
-// filter method
-const scores = [10, 30, 15, 25, 50, 40, 5];
+// map method
+const prices = [20, 10, 30, 25, 15, 40, 80, 5];
 
-const filterdScores = scores.filter((score) => {
-	// filter method do not alter orignal array. but we can define new array variable to result filter valuated.
-	return score > 20;
-});
-console.log("original method: ", scores);
-console.log("filter method: ", filterdScores);
+// const salePrices = prices.map((price) => {
+// 	return price / 2;
+// });
+const salePrices = prices.map((price) => price / 2);
 
-const users = [
-	{ name: "shaun", premium: true },
-	{ name: "yoshi", premium: false },
-	{ name: "mario", premium: false },
-	{ name: "chun-li", premium: true },
+console.log("original prices: ", prices);
+console.log("salePrices", salePrices);
+
+const products = [
+	{ name: "gold star", prices: 20 },
+	{ name: "mushroom", prices: 40 },
+	{ name: "green shells", prices: 30 },
+	{ name: "banan skin", prices: 10 },
+	{ name: "red shells", prices: 50 },
 ];
 
-// const premiumUsers = users.filter((user) => {
-// 	return user.premium;
-// });
-const premiumUsers = users.filter((user) => user.premium);
+const saleProduct = products.map((product) => {
+	if (product.prices > 30) {
+		// product.prices = product.prices / 2; // this statemnt cuse alter original porduct object beacuse each items in producs array are object
+		// return product;
+		return { name: product.name, price: product.prices / 2 };
+	} else {
+		return product;
+	}
+});
 
-console.log("premium users: ", premiumUsers);
+console.log(saleProduct);
