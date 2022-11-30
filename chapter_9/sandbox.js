@@ -1,38 +1,22 @@
-// example 1 - sorting strings
-const names = ["mario", "shaun", "chun-li", "luigi"];
-names.sort();
-console.log(names); // sort method unlike others array mehtods , alter the original array
+// Chaning Array Method
 
-// example 2 = sorting numbers
-const scores = [10, 50, 20, 5, 35, 70, 45];
-
-// scores.sort((a, b) => {
-// 	if (a > b) {
-// 		return 1;
-// 	} else if (a < b) {
-// 		return -1;
-// 	} else {
-// 		return 0;
-// 	}
-// });
-
-scores.sort((a, b) => {
-	return a - b;
-});
-
-console.log(scores);
-
-// exalple3 - sorting objects
-const players = [
-	{ name: "mario", score: 20 },
-	{ name: "luigi", score: 10 },
-	{ name: "chunli", score: 50 },
-	{ name: "yoshi", score: 30 },
-	{ name: "shaun", score: 70 },
+const products = [
+	{ name: "gold star", price: 30 },
+	{ name: "green shell", price: 10 },
+	{ name: "red shell", price: 40 },
+	{ name: "banana skin", price: 5 },
+	{ name: "mushroom", price: 50 },
 ];
 
-players.sort((a, b) => {
-	return a.score - b.score;
-});
+// const filtered = products.filter((product) => product.price > 20);
+// const promos = filtered.map((product) => {
+// 	return `the ${product.name} is  ${product.price / 2} pounds`;
+// });
 
-console.log(players);
+const promos = products
+	.filter((product) => product.price > 20)
+	.map((product) => {
+		return `the ${product.name} is  ${product.price / 2} pounds`;
+	});
+
+console.log(promos);
