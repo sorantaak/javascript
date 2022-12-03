@@ -1,23 +1,22 @@
-// dates & time
+// timestamps
+const befor = new Date("Februray 1 2022 7:30:59");
 const now = new Date();
 
-console.log(now);
-console.log(typeof now);
+console.log(now.getTime(), befor.getTime()); // getTime() method return timestamps
+const result = now.getTime() > befor.getTime();
+console.log(result);
 
-//years , maonths , dat, times
+const diff = now.getTime() - befor.getTime();
+console.log(diff);
 
-console.log("getFullYear :", now.getFullYear());
-console.log("getMoths :", now.getMonth());
-console.log("getDate :", now.getDate());
-console.log("getDay:", now.getDay());
-console.log("getHours:", now.getHours());
-console.log("getMinute:", now.getMinutes());
-console.log("getSeconds:", now.getSeconds());
+const mins = Math.round(diff / 1000 / 60);
+const hours = Math.round(mins / 60);
+const days = Math.round(hours / 60);
 
-// timestamps => milisecond first of january 1970
-console.log("timestamp: ", now.getTime());
+console.log(mins, hours, days);
+console.log(`the blog was writeen ${days} days ago`);
 
-// date strings
-console.log(now.toDateString());
-console.log(now.toTimeString());
-console.log(now.toLocaleString());
+// convertign timestamps into objects
+const timestamps = 1675938474990;
+console.log(new Date(timestamps));
+console.log(new Date(timestamps).toLocaleDateString("fa-IR"));
