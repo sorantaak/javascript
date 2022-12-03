@@ -26,4 +26,24 @@ list.addEventListener("click", (e) => {
 	}
 });
 
+const filterTodos = (term) => {
+	Array.from(list.children)
+		.filter((todo) => {
+			return !todo.textContent.toLowerCase().includes(term);
+		})
+		.forEach((todo) => {
+			todo.classList.add("filtered");
+		});
+	Array.from(list.children)
+		.filter((todo) => {
+			return todo.textContent.toLowerCase().includes(term);
+		})
+		.forEach((todo) => {
+			todo.classList.remove("filtered");
+		});
+};
 
+search.addEventListener("keyup", (e) => {
+	let term = e.target.value.trim().toLowerCase();
+	filterTodos(term);
+});
