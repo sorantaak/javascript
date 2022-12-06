@@ -1,4 +1,4 @@
-const getTodos = (callback) => {
+const getTodos = (resource, callback) => {
 	const requset = new XMLHttpRequest();
 
 	requset.addEventListener("readystatechange", () => {
@@ -10,23 +10,16 @@ const getTodos = (callback) => {
 			callback("could not fetch the data", undefined);
 		}
 	});
-	requset.open("GET", "./todos.json");
+	requset.open("GET", resource);
 	requset.send();
 };
-console.log(1);
-console.log(2);
-getTodos((err, data) => {
-	console.log("callback fired");
-	// console.log(err, data);
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(data);
-	}
-});
-console.log(3);
-console.log(4);
 
-// getTodos(()=>{
-//     console.log('another callback');
-// });
+getTodos("todos/luigi.json", (err, data) => {
+	console.log(data);
+	getTodos("todos/mario.json", (err, data) => {
+		console.log(data);
+		getTodos("todos/shaun.json", (err, data) => {
+			console.log(data);
+		});
+	});
+});

@@ -1,13 +1,13 @@
 [
 	{
 		"text": "play mariokdar",
-		"author": "shaun",
+		"author": "Luigi",
 		"points": 50,
 		"isCheck": false
 	},
 	{
 		"text": "buy some bread",
-		"author": "Mario",
+		"author": "Luigi",
 		"points": 30,
 		"isCheck": true
 	},
