@@ -1,0 +1,20 @@
+[
+	{
+		"text": "play mariokdar",
+		"author": "shaun",
+		"points": 50,
+		"isCheck": false
+	},
+	{
+		"text": "buy some bread",
+		"author": "Mario",
+		"points": 30,
+		"isCheck": true
+	},
+	{
+		"text": "do the plumming",
+		"author": "Luigi",
+		"points": 10,
+		"isCheck": false
+	}
+]

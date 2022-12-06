@@ -4,12 +4,13 @@ const getTodos = (callback) => {
 	requset.addEventListener("readystatechange", () => {
 		// console.log(requset, requset.readyState, requset.status);
 		if (requset.readyState === 4 && requset.status === 200) {
-			callback(undefined, requset.responseText);
+			const data = JSON.parse(requset.responseText); // parse method convert json text to javascript object
+			callback(undefined, data);
 		} else if (requset.readyState === 4) {
 			callback("could not fetch the data", undefined);
 		}
 	});
-	requset.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+	requset.open("GET", "./todos.json");
 	requset.send();
 };
 console.log(1);
