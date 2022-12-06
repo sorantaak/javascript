@@ -1,22 +1,17 @@
-// timestamps
-const befor = new Date("Februray 1 2022 7:30:59");
-const now = new Date();
+const clock = document.querySelector(".clock");
 
-console.log(now.getTime(), befor.getTime()); // getTime() method return timestamps
-const result = now.getTime() > befor.getTime();
-console.log(result);
+const tick = () => {
+	const now = new Date();
+	const h = now.getHours();
+	const m = now.getMinutes();
+	const s = now.getSeconds();
 
-const diff = now.getTime() - befor.getTime();
-console.log(diff);
+	const html = `
+        <span>${h}</span> : 
+        <span>${m}</span> :
+        <span>${s}</span>
+    `;
+	clock.innerHTML = html;
+};
 
-const mins = Math.round(diff / 1000 / 60);
-const hours = Math.round(mins / 60);
-const days = Math.round(hours / 60);
-
-console.log(mins, hours, days);
-console.log(`the blog was writeen ${days} days ago`);
-
-// convertign timestamps into objects
-const timestamps = 1675938474990;
-console.log(new Date(timestamps));
-console.log(new Date(timestamps).toLocaleDateString("fa-IR"));
+setInterval(tick, 100);
