@@ -1,7 +1,10 @@
-console.log(1);
-console.log(2);
-setTimeout(() => {
-	console.log("callback function fired");
-}, 2000);
-console.log(3);
-console.log(4);
+const requset = new XMLHttpRequest();
+
+requset.addEventListener("readystatechange", () => {
+	// console.log(requset, requset.readyState, requset.status);
+	if (requset.readyState === 4) {
+		console.log(requset.responseText);
+	}
+});
+requset.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+requset.send();
