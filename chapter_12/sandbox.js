@@ -1,25 +1,50 @@
-const getTodos = (resource, callback) => {
-	const requset = new XMLHttpRequest();
-
-	requset.addEventListener("readystatechange", () => {
-		// console.log(requset, requset.readyState, requset.status);
-		if (requset.readyState === 4 && requset.status === 200) {
-			const data = JSON.parse(requset.responseText); // parse method convert json text to javascript object
-			callback(undefined, data);
-		} else if (requset.readyState === 4) {
-			callback("could not fetch the data", undefined);
-		}
+const getTodos = (resource) => {
+	return new Promise((resolve, reject) => {
+		const requset = new XMLHttpRequest();
+		requset.addEventListener("readystatechange", () => {
+			// console.log(requset, requset.readyState, requset.status);
+			if (requset.readyState === 4 && requset.status === 200) {
+				const data = JSON.parse(requset.responseText); // parse method convert json text to javascript object
+				resolve(data);
+			} else if (requset.readyState === 4) {
+				reject("error getting resource");
+			}
+		});
+		requset.open("GET", resource);
+		requset.send();
 	});
-	requset.open("GET", resource);
-	requset.send();
 };
 
-getTodos("todos/luigi.json", (err, data) => {
-	console.log(data);
-	getTodos("todos/mario.json", (err, data) => {
-		console.log(data);
-		getTodos("todos/shaun.json", (err, data) => {
-			console.log(data);
-		});
+getTodos("todos/luigid.json")
+	.then((data) => {
+		console.log("Promise resolved: ", data);
+	})
+	.catch((err) => {
+		console.log("Promise rejected: ", err);
 	});
-});
+
+// promise example
+
+// const getSomething = () => {
+// 	return new Promise((resolve, reject) => {
+// 		// fetch something
+// 		// resolve("some data");
+// 		reject("some error");
+// 	});
+// };
+
+// getSomething().then(
+// 	(data) => {
+// 		console.log(data);
+// 	},
+// 	(err) => {
+// 		console.log(err);
+// 	}
+// );
+// getSomething()
+// 	.then((data) => {
+// 		console.log(data);
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
