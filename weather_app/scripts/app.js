@@ -2,9 +2,10 @@ const cityForm = document.querySelector("form");
 const card = document.querySelector(".card");
 const details = document.querySelector(".details");
 
+// update UI
 const updateUi = (data) => {
-	const cityDets = data.cityDets;
-	const weather = data.weather;
+	// destructure propertise
+	const { cityDets, weather } = data;
 
 	//update detail template
 	details.innerHTML = `
