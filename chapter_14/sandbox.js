@@ -7,9 +7,10 @@ let name = localStorage.getItem("name");
 let age = localStorage.getItem("age");
 console.log(name, age);
 
-// updating data
-localStorage.setItem("name", "luigi");
-localStorage.age = 40;
+// deleting data from locale storage
+// localStorage.removeItem("name");
+localStorage.clear(); // clear method removing all data from locale storage
+
 name = localStorage.getItem("name");
 age = localStorage.getItem("age");
 console.log(name, age);
