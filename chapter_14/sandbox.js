@@ -1,16 +1,16 @@
-// store data in locale storage
-localStorage.setItem("name", "mario");
-localStorage.setItem("age", 50);
+const todos = [
+	{ text: "play mariokart", author: "shaun" },
+	{ text: "buy some milk", author: "mario" },
+	{ text: "buy some bread", author: "luigi" },
+];
 
-// get data from locale storage
-let name = localStorage.getItem("name");
-let age = localStorage.getItem("age");
-console.log(name, age);
+// console.log(JSON.stringify(todos));
 
-// deleting data from locale storage
-// localStorage.removeItem("name");
-localStorage.clear(); // clear method removing all data from locale storage
+localStorage.setItem("todos", JSON.stringify(todos));
 
-name = localStorage.getItem("name");
-age = localStorage.getItem("age");
-console.log(name, age);
+const stored = localStorage.getItem("todos");
+console.log(stored);
+console.log(
+	"convert locale storage json complex data to javascript Object",
+	JSON.parse(stored)
+);
