@@ -23,13 +23,22 @@ class User {
 	}
 }
 
+class Admin extends User {
+	deleteUser(user) {
+		users = users.filter(u => user.username !== u.username);
+		
+		
+	}
+}
+
 const userOne = new User("soran", "soran@gmailcom");
 const userTwo = new User("luigi", "luigi@gmail.com");
+const userThree = new Admin("sirwan", "sirwan@gmail.com");
 
-console.log(userOne, userTwo);
-userOne.login().incScore().incScore().logout();
+console.log(userOne, userTwo, userThree);
 
-// the 'new' keyword
-// 1 - it creates a new empty object {}
-// 2 - it binds the value of 'this' to the new empty object
-// 3 - it calls the constructor function to 'build' the object
+let users = [userOne, userTwo, userThree];
+console.log(users);
+
+userThree.deleteUser(userTwo);
+console.log(users);
