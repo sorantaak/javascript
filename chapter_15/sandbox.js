@@ -24,21 +24,18 @@ class User {
 }
 
 class Admin extends User {
+	constructor(username, email, title) {
+		super(username, email);
+		this.title = title;
+	}
 	deleteUser(user) {
-		users = users.filter(u => user.username !== u.username);
-		
-		
+		users = users.filter((u) => u.username !== user.usernam);
 	}
 }
 
 const userOne = new User("soran", "soran@gmailcom");
 const userTwo = new User("luigi", "luigi@gmail.com");
-const userThree = new Admin("sirwan", "sirwan@gmail.com");
+const userThree = new Admin("sirwan", "sirwan@gmail.com", "black-belt-ninja");
 
-console.log(userOne, userTwo, userThree);
-
+console.log(userThree);
 let users = [userOne, userTwo, userThree];
-console.log(users);
-
-userThree.deleteUser(userTwo);
-console.log(users);
