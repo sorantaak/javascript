@@ -1,24 +1,28 @@
 // constractor function
+
+// notes
+// Every object in JavaScript has a prototype
+// Prototypes contain all the methods for that object type
+
 function User(username, email) {
 	this.username = username;
 	this.email = email;
-	this.login = function () {
-		console.log(`${this.username} logged in`);
-	};
 }
-// class User {
-// 	constructor(username, email) {
-// 		// set up properties
-// 		this.username = username;
-// 		this.email = email;
-// 		this.score = 0;
-// 	}
-// }
+
+User.prototype.login = function () {
+	console.log(`${this.username} has logged in`);
+	return this;
+};
+User.prototype.logout = function () {
+	console.log(`${this.username} has logged out`);
+	return this;
+};
 
 const userOne = new User("soran", "soran@gmailcom");
 const userTwo = new User("luigi", "luigi@gmail.com");
 console.log(userOne, userTwo);
-userOne.login();
+userOne.login().logout();
+
 
 // the 'new' keyword
 // 1 - it creates a new empty object {}
