@@ -18,11 +18,23 @@ User.prototype.logout = function () {
 	return this;
 };
 
+function Admin(username, email, title) {
+	User.call(this, username, email);
+	this.title = title;
+}
+
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.deleteUser = function () {
+	// delete user
+};
+console.log(Admin.prototype);
+
 const userOne = new User("soran", "soran@gmailcom");
 const userTwo = new User("luigi", "luigi@gmail.com");
-console.log(userOne, userTwo);
-userOne.login().logout();
+const userThree = new Admin("shaun", "shaun@gmail.com", "black-belt-ninja");
 
+console.log(userOne, userTwo, userThree);
+userOne.login().logout();
 
 // the 'new' keyword
 // 1 - it creates a new empty object {}
