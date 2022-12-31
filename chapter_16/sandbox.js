@@ -1,5 +1,6 @@
 const list = document.querySelector("ul");
 const form = document.querySelector("form");
+const button = document.querySelector("button");
 console.log(form);
 
 // add recipes
@@ -27,7 +28,7 @@ const removeRecipe = (id) => {
 };
 
 // get documents
-db.collection("recipes").onSnapshot((snapshot) => {
+const unsub = db.collection("recipes").onSnapshot((snapshot) => {
 	snapshot.docChanges().forEach((change) => {
 		const doc = change.doc;
 		console.log(doc.data());
@@ -68,4 +69,10 @@ list.addEventListener("click", (e) => {
 				console.log("recipe deleted");
 			});
 	}
+});
+
+// unsubscribe from collection database in firestore
+button.addEventListener("click", () => {
+	unsub();
+	console.log("unsubscribe frome collections");
 });
