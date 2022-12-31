@@ -1,6 +1,8 @@
 const list = document.querySelector("ul");
 const form = document.querySelector("form");
 console.log(form);
+
+// add recipes
 const addRecipe = (recipe, id) => {
 	let time = recipe.created_at.toDate();
 	let html = `
@@ -13,20 +15,29 @@ const addRecipe = (recipe, id) => {
 	list.innerHTML += html;
 	console.log(html);
 };
-
-db.collection("recipes")
-	.get()
-	.then((snapshot) => {
-		// when we have the data
-		// console.log(snapshot.docs[0].data());
-		snapshot.docs.forEach((doc) => {
-			// console.log(doc.data());
-			addRecipe(doc.data(), doc.id);
-		});
-	})
-	.catch((err) => {
-		console.log(err);
+// remove recipes in DOM
+const removeRecipe = (id) => {
+	const recipes = document.querySelectorAll("li");
+	recipes.forEach((recipe) => {
+		console.log(recipe);
+		if (recipe.getAttribute("data-id") === id) {
+			recipe.remove();
+		}
 	});
+};
+
+// get documents
+db.collection("recipes").onSnapshot((snapshot) => {
+	snapshot.docChanges().forEach((change) => {
+		const doc = change.doc;
+		console.log(doc.data());
+		if (change.type === "added") {
+			addRecipe(doc.data(), doc.id);
+		} else if (change.type === "removed") {
+			removeRecipe(doc.id);
+		}
+	});
+});
 
 // add documents
 form.addEventListener("submit", (e) => {
@@ -46,7 +57,7 @@ form.addEventListener("submit", (e) => {
 		});
 });
 
-// deleting data
+// deleting data in firesotre databas
 list.addEventListener("click", (e) => {
 	if (e.target.tagName === "BUTTON") {
 		const id = e.target.parentElement.getAttribute("data-id");
