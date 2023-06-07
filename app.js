@@ -1,24 +1,19 @@
-// scope
-// let firstName = "Soran";
+// let message = function () {
+// 	console.log("Welcome");
+// };
+// message();
+// message();
+// message();
 
-// if (true) {
-// 	let lastName = "Taak"; // locale variable
-// 	console.log(lastName);
-// 	// console.log(firstName);
-// 	if (true) {
-// 		let age = 30;
-// 		console.log(age);
-// 	}
+// let userId = function (id) {
+// 	console.log(id);
+// };
 
-// }
-// console.log(firstName);
+// userId(10);
 
-// new example
-let firstName = "Test1";
-if (true) {
-	// let firstName = "Test2";
-	if (true) {
-		// let firstName = "Test3";
-		console.log(firstName);
-	}
+function userId(id) {
+	let res = "User I is : " + id;
+	return res;
 }
+
+console.log(userId(10));
