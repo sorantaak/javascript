@@ -1,14 +1,28 @@
-// string
-let firstName = "Soran";
-let lastName = "taak";
-let fullName = firstName + " " + lastName;
-console.log(fullName);
+let age = 12;
+if (age > 20) {
+	console.log("Is young");
+}
+if (age < 20) {
+	console.log("Is childe");
+}
 
-// number
-let num1 = 12;
-let num2 = 20;
-let sum = num1 + num2;
-console.log(sum);
+// new example
+let validEmail = true;
+let validPassword = false;
+if (validEmail && validPassword) {
+	console.log("Logged in");
+} else if (validEmail || validPassword) {
+	console.log("Is Correct");
+}
 
-let res = fullName + num1 + num2;
-console.log(res);
+// new example
+let isUser = true;
+let userRole = "admin";
+
+if (isUser) {
+	console.log("Welcome User!");
+} else if (userRole === "admin") {
+	console.log("Welcome admin");
+} else {
+	console.log("Welcome");
+}
