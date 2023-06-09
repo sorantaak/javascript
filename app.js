@@ -1,11 +1,10 @@
-let fullName = "soran_Taak";
-console.log(fullName.length);
-console.log(fullName.toLocaleLowerCase());
-console.log(fullName.toUpperCase());
-
-let passwoerd = "SoranTaak12345678";
-console.log(passwoerd.includes("112345"));
-let email = " soran.taak@gmail.com ";
-console.log(email);
-
-console.log(email.trim());
+function checkPassword(pass) {
+	if (pass.length > 8 && !pass.includes("12345")) {
+		return true;
+	}
+	return false;
+}
+let passowrd = "soran_taak54123";
+console.log(checkPassword('abcd12345'));
+console.log(checkPassword('abcd12'));
+console.log(checkPassword('abcdabcd22'));
