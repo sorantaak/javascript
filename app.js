@@ -1,10 +1,20 @@
-function checkPassword(pass) {
-	if (pass.length > 8 && !pass.includes("12345")) {
-		return true;
-	}
-	return false;
-}
-let passowrd = "soran_taak54123";
-console.log(checkPassword('abcd12345'));
-console.log(checkPassword('abcd12'));
-console.log(checkPassword('abcdabcd22'));
+let num = 12.12;
+console.log(num);
+
+let res = num.toFixed(5);
+console.log(res);
+
+console.log("Math.round =" + Math.round(num));
+console.log("Math.floor =" + Math.floor(num));
+console.log("Math.ceil =" + Math.ceil(num));
+
+////////Math.random ////////
+
+let randomNum = Math.random();
+console.log("Random Number = " + randomNum);
+
+// create random between two nums 10 and 50
+let num1 = 10;
+let num2 = 20;
+let createNumRandom = Math.floor(Math.random() * (num2 - num1)) + num1;
+console.log("Random Number between 10 - 20 : " + createNumRandom);
