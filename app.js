@@ -1,20 +1,12 @@
-let num = 12.12;
-console.log(num);
+// const isUSer = true;
+// isUSer = false;
+// console.log(isUSer);
+const userInfo = {
+	id: 2,
+};
 
-let res = num.toFixed(5);
-console.log(res);
-
-console.log("Math.round =" + Math.round(num));
-console.log("Math.floor =" + Math.floor(num));
-console.log("Math.ceil =" + Math.ceil(num));
-
-////////Math.random ////////
-
-let randomNum = Math.random();
-console.log("Random Number = " + randomNum);
-
-// create random between two nums 10 and 50
-let num1 = 10;
-let num2 = 20;
-let createNumRandom = Math.floor(Math.random() * (num2 - num1)) + num1;
-console.log("Random Number between 10 - 20 : " + createNumRandom);
+// userInfo = {
+// 	id:21
+// }
+userInfo.id = 40;
+console.log(userInfo);
