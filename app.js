@@ -8,14 +8,15 @@ const cartItems = [
 // 	return item.title === "Book 2";
 // });
 // console.log(indexValue);
-const findProducts = function (cart, productTitle) {
-	const indexValue = cart.findIndex(function (item, index) {
-		return item.title.toLowerCase() === productTitle.toLowerCase();
-	});
 
-	return indexValue > 0
-		? cart[indexValue]
+const findProducts = function (cart, productTitle) {
+	const product = cart.find(function (item, index) {
+		return item.title.toLowerCase() === productTitle.toLowerCase(); // if condition is true return current item
+	});
+	// console.log(product);
+	return product !== undefined
+		? product
 		: `could not find product :${productTitle}`;
 };
-const result = findProducts(cartItems, "aaaa");
+const result = findProducts(cartItems, "book3");
 console.log(result);
