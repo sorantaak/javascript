@@ -1,5 +1,9 @@
-const btn = document.querySelector("button");
+document.querySelector("#add-product").addEventListener("click", () => {
+	console.log("add Product");
+});
 
-btn.addEventListener("click", (e) => {
-	e.target.textContent = "Clicked";
+document.querySelector("#remove-product").addEventListener("click", () => {
+	document.querySelectorAll(".product").forEach((item) => {
+		item.remove();
+	});
 });
