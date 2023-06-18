@@ -1,9 +1,6 @@
-document.querySelector("#add-product").addEventListener("click", () => {
-	console.log("add Product");
+document.querySelector("#search-products").addEventListener("input", (e) => {
+	console.log("input : " + e.target.value);
 });
-
-document.querySelector("#remove-product").addEventListener("click", () => {
-	document.querySelectorAll(".product").forEach((item) => {
-		item.remove();
-	});
+document.querySelector("#search-products").addEventListener("change", (e) => {
+	console.log("change : " + e.target.value);
 });
