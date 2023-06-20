@@ -1,25 +1,33 @@
+const products = [];
+const filters = {
+	searchItem: "",
+};
+
+const renderProducts = function (products, filters) {
+	const filterProdcuts = products.filter(function (item) {
+		return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
+	});
+	document.querySelector("#products").innerHTML = "";
+	filterProdcuts.forEach(function (item) {
+		const productEl = document.createElement("p");
+		productEl.textContent = item.title;
+		document.querySelector("#products").appendChild(productEl);
+	});
+};
+renderProducts(products, filters);
+
+document
+	.querySelector("#search-products")
+	.addEventListener("input", function (e) {
+		filters.searchItem = e.target.value;
+		renderProducts(products, filters);
+	});
+
 document
 	.querySelector("#add-product-form")
 	.addEventListener("submit", function (e) {
 		e.preventDefault();
-		const p = document.createElement("p");
-		p.textContent = e.target.elements.productTitle.value;
-		document.querySelector("#products").appendChild(p);
-		console.log(document.querySelector("#products").childNodes);
+		products.push({ title: e.target.elements.productTitle.value, exist: true });
+		renderProducts(products, filters);
 		e.target.elements.productTitle.value = "";
-	});
-
-document
-	.querySelector("#search-product")
-	.addEventListener("input", function (e) {
-		document.querySelector("#search-result").innerHTML = "";
-		if (document.querySelector("#products").childNodes.length === 0) return;
-		document.querySelector("#products").childNodes.forEach(function (item) {
-			if (item.textContent.toLowerCase().includes(e.target.value)) {
-				const p = document.createElement("p");
-				p.textContent = item.textContent;
-				document.querySelector("#search-result").appendChild(p);
-			}
-			// console.log(item.textContent);
-		});
 	});
