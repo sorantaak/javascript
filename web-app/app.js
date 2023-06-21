@@ -1,26 +1,30 @@
-const products = [
-	{
-		title: "Book 1",
-		exist: true,
-	},
-	{
-		title: "Book 2",
-		exist: false,
-	},
-	{
-		title: "Book 3",
-		exist: true,
-	},
-	{
-		title: "Book 4",
-		exist: false,
-	},
+let products = [
+	// {
+	// 	title: "Book 1",
+	// 	exist: true,
+	// },
+	// {
+	// 	title: "Book 2",
+	// 	exist: false,
+	// },
+	// {
+	// 	title: "Book 3",
+	// 	exist: true,
+	// },
+	// {
+	// 	title: "Book 4",
+	// 	exist: false,
+	// },
 ];
 
 const filters = {
 	searchItem: "",
 	availableProducts: false,
 };
+const productsJSON = localStorage.getItem("products");
+if (productsJSON !== null) {
+	products = JSON.parse(productsJSON);
+}
 
 const renderProducts = function (products, filters) {
 	let filteredProducts = products.filter(function (item) {
@@ -58,6 +62,7 @@ document
 			title: e.target.elements.productTitle.value,
 			exist: true,
 		});
+		localStorage.setItem("products", JSON.stringify(products));
 		renderProducts(products, filters);
 		e.target.elements.productTitle.value = "";
 	});
