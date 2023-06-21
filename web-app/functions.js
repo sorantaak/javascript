@@ -1,3 +1,4 @@
+console.log(uuidv4());
 const getSaveProducts = function () {
 	const productsJSON = localStorage.getItem("products");
 	if (productsJSON !== null) {
