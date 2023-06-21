@@ -67,7 +67,7 @@ const createProductDOM = function (product) {
 	productEl.appendChild(removeButton);
 	removeButton.addEventListener("click", function () {
 		removeProdcut(product.id);
-		saveProducts(product);
+		saveProducts(products);
 		renderProducts(products, filters);
 	});
 	return productEl;
