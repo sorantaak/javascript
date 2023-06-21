@@ -19,6 +19,14 @@ const removeProdcut = function (id) {
 		products.splice(productIndex, 1);
 	}
 };
+const toggleProduct = function (id) {
+	const product = products.find(function (item) {
+		return item.id === id;
+	});
+	if (product !== undefined) {
+		product.exist = !product.exist;
+	}
+};
 
 const renderProducts = function (products, filters) {
 	let filteredProducts = products.filter(function (item) {
@@ -44,6 +52,12 @@ const createProductDOM = function (product) {
 	const removeButton = document.createElement("button");
 
 	checkBox.setAttribute("type", "checkbox");
+	checkBox.checked = !product.exist;
+	checkBox.addEventListener("change", function () {
+		toggleProduct(product.id);
+		saveProducts(products);
+		renderProducts(products, filters);
+	});
 	productEl.appendChild(checkBox);
 
 	productItem.textContent = product.title;
@@ -53,7 +67,7 @@ const createProductDOM = function (product) {
 	productEl.appendChild(removeButton);
 	removeButton.addEventListener("click", function () {
 		removeProdcut(product.id);
-		saveProducts(products);
+		saveProducts(product);
 		renderProducts(products, filters);
 	});
 	return productEl;
