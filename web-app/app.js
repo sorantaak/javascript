@@ -19,6 +19,7 @@ document
 		products.push({
 			id: id,
 			title: e.target.elements.productTitle.value,
+			price: "",
 			exist: true,
 		});
 		saveProducts(products);
