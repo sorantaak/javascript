@@ -73,3 +73,5 @@ const createProductDOM = function (product) {
 	});
 	return productEl;
 };
+
+
