@@ -42,6 +42,7 @@ const sortProducts = function (products, sortBy) {
 		case "byCreated":
 			return products.sort(function (a, b) {
 				if (a.created > b.created) {
+					// fix error
 					return -1;
 				} else if (a.created < b.created) {
 					return 1;
