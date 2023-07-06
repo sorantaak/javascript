@@ -39,7 +39,16 @@ const sortProducts = function (products, sortBy) {
 					return 0;
 				}
 			});
-
+		case "byCreated":
+			return products.sort(function (a, b) {
+				if (a.created > b.created) {
+					return -1;
+				} else if (a.created < b.created) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
 		default:
 			return products;
 	}
