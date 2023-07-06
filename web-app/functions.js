@@ -27,8 +27,25 @@ const toggleProduct = function (id) {
 		product.exist = !product.exist;
 	}
 };
+const sortProducts = function (products, sortBy) {
+	switch (sortBy) {
+		case "byEdited":
+			return products.sort(function (a, b) {
+				if (a.updated > b.updated) {
+					return -1;
+				} else if (a.updated < b.updated) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
 
+		default:
+			return products;
+	}
+};
 const renderProducts = function (products, filters) {
+	products = sortProducts(products, filters.sortBy);
 	let filteredProducts = products.filter(function (item) {
 		return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
 	});
