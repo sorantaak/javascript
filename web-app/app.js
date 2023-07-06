@@ -44,8 +44,5 @@ window.addEventListener("storage", function (e) {
 });
 const now = moment();
 
-// now.add(1, "year");
-// console.log(now.toString());
-// now.add(1, "year").subtract(2, "days");
-// console.log(now.toString());
-console.log(now.format('MMMM dddd YYYY'));
+now.locale("fa");
+console.log(now.format("YYYY-MM-DD HH:mm"));
