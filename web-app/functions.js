@@ -74,4 +74,6 @@ const createProductDOM = function (product) {
 	return productEl;
 };
 
-
+const lastEditMessage = function (timestamp) {
+	return `Last Edit : ${moment(timestamp).locale("fa").fromNow()}`;
+};
