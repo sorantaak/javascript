@@ -16,7 +16,7 @@ document
 	.addEventListener("submit", function (e) {
 		e.preventDefault();
 		const id = uuidv4();
-		const timestamp = moment.valueOf(); // create timestamp as number by valueOf method
+		const timestamp = moment().valueOf(); // create timestamp as number by valueOf method
 		products.push({
 			id: id,
 			title: e.target.elements.productTitle.value,
