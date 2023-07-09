@@ -1,11 +1,12 @@
 // console.log(uuidv4());
 const getSaveProducts = () => {
 	const productsJSON = localStorage.getItem("products");
-	if (productsJSON !== null) {
-		return JSON.parse(productsJSON);
-	} else {
-		return [];
-	}
+	return productsJSON !== null ? JSON.parse(productsJSON) : [];
+	// if (productsJSON !== null) {
+	// 	return JSON.parse(productsJSON);
+	// } else {
+	// 	return [];
+	// }
 };
 
 const saveProducts = (products) => {
