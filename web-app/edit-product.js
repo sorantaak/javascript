@@ -6,10 +6,7 @@ const dateElement = document.querySelector("#last-edit");
 const productId = location.hash.substring(1);
 let products = getSaveProducts();
 // console.log(products);
-let product = products.find(function (item) {
-	// console.log(item);
-	return item.id === productId;
-});
+let product = products.find((item) => item.id === productId);
 
 if (product === undefined) {
 	location.assign("/index.html");
@@ -22,7 +19,7 @@ removeBtn.textContent = `remove ${product.title} product`;
 document.body.appendChild(removeBtn);
 
 titleElement.addEventListener("input", function (e) {
-	products.map(function (item) {
+	products.map((item) => {
 		if (item.id === productId) {
 			item.title = e.target.value;
 			item.updated = moment().valueOf();
@@ -34,7 +31,7 @@ titleElement.addEventListener("input", function (e) {
 	saveProducts(products);
 });
 priceeElement.addEventListener("input", function (e) {
-	products.map(function (item) {
+	products.map((item) => {
 		if (item.id === productId) {
 			item.price = e.target.value;
 			item.updated = moment().valueOf();
@@ -44,7 +41,7 @@ priceeElement.addEventListener("input", function (e) {
 	});
 	saveProducts(products);
 });
-removeBtn.addEventListener("click", function () {
+removeBtn.addEventListener("click", () => {
 	const newProdcuts = products.filter(function (item) {
 		return item.id !== productId;
 	});
@@ -52,7 +49,7 @@ removeBtn.addEventListener("click", function () {
 	location.assign("/index.html");
 });
 
-window.addEventListener("storage", function (e) {
+window.addEventListener("storage", (e) => {
 	// alert("aaaaaaaaaaaaa");
 	if (e.key === "products") {
 		products = JSON.parse(e.newValue);

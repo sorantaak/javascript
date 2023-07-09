@@ -1,5 +1,5 @@
 // console.log(uuidv4());
-const getSaveProducts = function () {
+const getSaveProducts = () => {
 	const productsJSON = localStorage.getItem("products");
 	if (productsJSON !== null) {
 		return JSON.parse(productsJSON);
@@ -8,26 +8,22 @@ const getSaveProducts = function () {
 	}
 };
 
-const saveProducts = function (products) {
+const saveProducts = (products) => {
 	localStorage.setItem("products", JSON.stringify(products));
 };
-const removeProdcut = function (id) {
-	const productIndex = products.findIndex(function (item) {
-		return item.id === id;
-	});
+const removeProdcut = (id) => {
+	const productIndex = products.findIndex((item) => item.id === id);
 	if (productIndex > -1) {
 		products.splice(productIndex, 1);
 	}
 };
-const toggleProduct = function (id) {
-	const product = products.find(function (item) {
-		return item.id === id;
-	});
+const toggleProduct = (id) => {
+	const product = products.find((item) => item.id === id);
 	if (product !== undefined) {
 		product.exist = !product.exist;
 	}
 };
-const sortProducts = function (products, sortBy) {
+const sortProducts = (products, sortBy) => {
 	switch (sortBy) {
 		case "byEdited":
 			return products.sort(function (a, b) {
@@ -54,12 +50,12 @@ const sortProducts = function (products, sortBy) {
 			return products;
 	}
 };
-const renderProducts = function (products, filters) {
+const renderProducts = (products, filters) => {
 	products = sortProducts(products, filters.sortBy);
 	let filteredProducts = products.filter(function (item) {
 		return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
 	});
-	filteredProducts = filteredProducts.filter(function (item) {
+	filteredProducts = filteredProducts.filter((item) => {
 		if (filters.availableProducts) {
 			return item.exist;
 		} else {
@@ -72,7 +68,7 @@ const renderProducts = function (products, filters) {
 	});
 };
 
-const createProductDOM = function (product) {
+const createProductDOM = (product) => {
 	const productEl = document.createElement("div");
 	const checkBox = document.createElement("input");
 	const productItem = document.createElement("a");
@@ -80,7 +76,7 @@ const createProductDOM = function (product) {
 
 	checkBox.setAttribute("type", "checkbox");
 	checkBox.checked = !product.exist;
-	checkBox.addEventListener("change", function () {
+	checkBox.addEventListener("change", () => {
 		toggleProduct(product.id);
 		saveProducts(products);
 		renderProducts(products, filters);
@@ -93,7 +89,7 @@ const createProductDOM = function (product) {
 
 	removeButton.textContent = "Remove";
 	productEl.appendChild(removeButton);
-	removeButton.addEventListener("click", function () {
+	removeButton.addEventListener("click", () => {
 		removeProdcut(product.id);
 		saveProducts(products);
 		renderProducts(products, filters);
@@ -101,6 +97,6 @@ const createProductDOM = function (product) {
 	return productEl;
 };
 
-const lastEditMessage = function (timestamp) {
+const lastEditMessage = (timestamp) => {
 	return `Last Edit : ${moment(timestamp).locale("fa").fromNow()}`;
 };
