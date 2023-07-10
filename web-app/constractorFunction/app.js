@@ -20,7 +20,7 @@ crateProduct = () => {
 				title: "New Book",
 				price: 99,
 			});
-			const isCheck = true;
+			const isCheck = false;
 			if (!isCheck) {
 				resolve();
 			} else {
@@ -29,12 +29,15 @@ crateProduct = () => {
 		}, 3000);
 	});
 };
-console.log(crateProduct);
+// console.log(crateProduct);
 // crateProduct()
 // 	.then(getProducts)
 // 	.catche((er) => {
 // 		console.log(er);
 // 	});
-crateProduct()
-	.then(getProducts)
-	.catch((er) => console.log(er));
+
+async function getData() {
+	await crateProduct();
+	getProducts();
+}
+getData();
