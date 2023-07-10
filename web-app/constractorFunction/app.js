@@ -1,17 +1,26 @@
-class User {
-	constructor(id, email) {
-		this.id = id;
-		this.email = email;
-	}
-	get userInfo() {
-		return `ID : ${this.id} - Email: ${this.email}`;
-	}
-	set userInfo(value) {
-		const part = value.split(" ");
-		this.id = part[0];
-		this.email = part[1];
-	}
-}
-const user1 = new User(2, "aaa@mail.com");
-user1.userInfo = "10 tt@mail.com";
-console.log(user1.userInfo);
+const products = [
+	{ title: "book 1", price: 79 },
+	{ title: "book 2", price: 29 },
+	{ title: "book 3", price: 59 },
+];
+
+getProducts = () => {
+	setTimeout(() => {
+		const fetchProduct = products.map(
+			(item) => `Product: ${item.title} - Price: ${item.price}`
+		);
+		console.log(fetchProduct);
+	}, 2000);
+};
+crateProduct = (callback) => {
+	setTimeout(() => {
+		products.push({
+			title: "New Book",
+			price: 99,
+		});
+		callback();
+	}, 3000);
+};
+
+crateProduct(getProducts);
+
