@@ -1,18 +1,17 @@
-// const fullName = "Soran Taak";
-// const parts = fullName.split(" ");
-// console.log(parts);
-
-const product = {
-	title: "Book",
-	price: 79,
-	get productInfo() {
-		return `Title : ${this.title} - Price: ${this.price}`;
-	},
-	set productInfo(value) {
-		const parts = value.split(" ");
-		this.title = parts[0];
-		this.price = parts[1];
-	},
-};
-product.productInfo = "Book100 50";
-console.log(product.productInfo);
+class User {
+	constructor(id, email) {
+		this.id = id;
+		this.email = email;
+	}
+	get userInfo() {
+		return `ID : ${this.id} - Email: ${this.email}`;
+	}
+	set userInfo(value) {
+		const part = value.split(" ");
+		this.id = part[0];
+		this.email = part[1];
+	}
+}
+const user1 = new User(2, "aaa@mail.com");
+user1.userInfo = "10 tt@mail.com";
+console.log(user1.userInfo);
