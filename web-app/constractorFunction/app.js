@@ -1,20 +1,23 @@
-// const User = {
-// 	id: 2,
-// 	email: "soran.taak@gmail.com",
-// 	userInfo: function () {
-// 		return `ID: ${this.id} - Email: ${this.email}`;
-// 	},
+// const User = function (id, email) {
+// 	// there is User is constractor.
+// 	this.email = email;
+// 	this.id - id;
 // };
-
-const User = function (email, id) {
-	// there is User is constractor.
-	this.email = email;
-	this.id - id;
-};
-User.prototype.userInfo = function () {
-	return `ID: ${this.id} - Email: ${this.email}`;
-};
-const username = new User("test@test.com", 2); // when use new perfrix function infact we created object from function. username is object now => {} . user is constractor
-console.log(username.userInfo());
-const username2 = new User("test2@test2.com", 6);
-console.log(username2.userInfo());
+// User.prototype.userInfo = function () {
+// 	return `ID: ${this.id} - Email: ${this.email}`;
+// };
+// const username = new User(2, "test@test.com");
+// console.log(username.userInfo());
+// const username2 = new User(6, "test2@test2.com");
+// console.log(username2.userInfo());
+class User {
+	constructor(id, email) {
+		this.id = id;
+		this.email = email;
+	}
+	userInfo() {
+		return `ID: ${this.id} - Email: ${this.email}`;
+	}
+}
+const user1 = new User(2, "test@test.com");
+console.log(user1.userInfo());
