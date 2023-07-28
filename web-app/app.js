@@ -1,9 +1,9 @@
-const checkout = (...nums)=>{
-	let sum = 0
-	nums.forEach(item => sum+=item)
-	return sum
-}
-console.log(checkout(10,14,12,-9));
+const cartDetails = (username, totalPrice, ...products) => {
+	console.log(`username : ${username}`);
+	console.log(`totalprice : ${totalPrice}`);
+	console.log(`username : ${products.join(", ")}`);
+};
+cartDetails("soran", 150, "book1", "book2", "book3");
 // const getBtn = document.querySelector("#get-btn");
 // const postBtn = document.querySelector("#post-btn");
 
