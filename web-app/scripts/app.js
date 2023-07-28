@@ -17,7 +17,7 @@ document.querySelector("#add-product-form").addEventListener("submit", (e) => {
 	products.push({
 		id: id,
 		title: e.target.elements.productTitle.value,
-		price: "",
+		price: e.target.elements.productPrice.value,
 		exist: true,
 		created: timestamp,
 		updated: timestamp,
@@ -25,6 +25,7 @@ document.querySelector("#add-product-form").addEventListener("submit", (e) => {
 	saveProducts(products);
 	renderProducts(products, filters);
 	e.target.elements.productTitle.value = "";
+	e.target.elements.productPrice.value = "";
 });
 
 document
