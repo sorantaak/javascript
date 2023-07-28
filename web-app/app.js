@@ -1,22 +1,28 @@
-const getBtn = document.querySelector("#get-btn");
-const postBtn = document.querySelector("#post-btn");
+const checkout = (...nums)=>{
+	let sum = 0
+	nums.forEach(item => sum+=item)
+	return sum
+}
+console.log(checkout(10,14,12,-9));
+// const getBtn = document.querySelector("#get-btn");
+// const postBtn = document.querySelector("#post-btn");
 
-const getData = () => {
-	axios
-		.get("https://jsonplaceholder.typicode.com/posts/1")
-		.then((res) => console.log(res));
-};
+// const getData = () => {
+// 	axios
+// 		.get("https://jsonplaceholder.typicode.com/posts/1")
+// 		.then((res) => console.log(res));
+// };
 
-const postData = () => {
-	axios
-		.post("https://jsonplaceholder.typicode.com/posts", {
-			userId: 3,
-			id: 107,
-			title: "Post title",
-			body: "Post body",
-		})
-		.then((res) => console.log(res));
-};
+// const postData = () => {
+// 	axios
+// 		.post("https://jsonplaceholder.typicode.com/posts", {
+// 			userId: 3,
+// 			id: 107,
+// 			title: "Post title",
+// 			body: "Post body",
+// 		})
+// 		.then((res) => console.log(res));
+// };
 
-getBtn.addEventListener("click", getData);
-postBtn.addEventListener("click", postData);
+// getBtn.addEventListener("click", getData);
+// postBtn.addEventListener("click", postData);
