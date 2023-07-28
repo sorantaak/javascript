@@ -1,9 +1,11 @@
-let products = ["Book1", "Book2", "Book3"];
-// const newArray= ['aaaaaaa',...products , 'Book5']
-// newArray.push('Book5');
-products = [...products, "zzzzzzz"];
-console.log(products);
-// console.log(newArray);
+const product = {
+	title:"Book1",
+	price:500
+}
+const {title , price, exist = true} = product
+console.log(title);
+console.log(price);
+console.log(exist);
 // const getBtn = document.querySelector("#get-btn");
 // const postBtn = document.querySelector("#post-btn");
 
