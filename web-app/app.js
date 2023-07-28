@@ -1,9 +1,9 @@
-const cartDetails = (username, totalPrice, ...products) => {
-	console.log(`username : ${username}`);
-	console.log(`totalprice : ${totalPrice}`);
-	console.log(`username : ${products.join(", ")}`);
-};
-cartDetails("soran", 150, "book1", "book2", "book3");
+let products = ["Book1", "Book2", "Book3"];
+// const newArray= ['aaaaaaa',...products , 'Book5']
+// newArray.push('Book5');
+products = [...products, "zzzzzzz"];
+console.log(products);
+// console.log(newArray);
 // const getBtn = document.querySelector("#get-btn");
 // const postBtn = document.querySelector("#post-btn");
 
