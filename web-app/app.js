@@ -1,8 +1,6 @@
-const product = {
-	title:"Book1",
-	price:500
-}
-const {title , price, exist = true} = product
+const product = ['Book1', 700]
+
+const [title , price, exist = true] = product
 console.log(title);
 console.log(price);
 console.log(exist);
